@@ -14,10 +14,10 @@ public class Battle {
 
         System.out.println(count+"回対戦します");
 
-        //ジャンケン用の乱数
+        //ジャンケンの乱数用の変数
         int num = 0;
 
-        //ジャンケンの入力
+        //ジャンケンの入力用の変数
         int hand = 0;
 
         for (int i=1; i <= count; i++){
@@ -26,13 +26,16 @@ public class Battle {
             System.out.print(">");
             hand = scan.nextInt();
 
+            //ジャンケン乱数
             num = rand.nextInt(3)+1;
-            if(hand == 1 && num == 1){
-                System.out.println("グーでチョキに勝ちました");
-            }
 
-            //続きはまた4月22日
+            if((hand-num+2)%3 == 1){
+                System.out.println("あなたの勝ちです");
+            } else if((hand-num+2)%3 == 2) {
+                System.out.println("あいこです");
+            } else {
+                System.out.println("あなたの負けです");
+            }
         }
     }
 }
-
